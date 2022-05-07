@@ -4,7 +4,7 @@ import java.util.List;
 /*Stwórz listę liczb od 0 do 100. Pomnóż liczby parzyste przez 2.
 Wydrukuj listę na konsoli.
 */
-
+//sprawdzanie czy liczba parzysta
 public class lista_zad1 {
     public static void main(String[] args) {
         List<Integer> lista = new ArrayList<>();   // nie może być int -- tu potrzeba typu komplementarnego -- Integer
