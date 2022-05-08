@@ -19,7 +19,7 @@ public class ZadanieDomowe1 {
             System.out.println("1 to nie liczba pierwsza");
         } else if (liczba == 2) {
             System.out.println("2 to liczba pierwsza");
-        } else if (modulo(liczba) == 0) {
+        } else if (czyPodzielnaPrzez2(liczba) == 0) {
             System.out.println(liczba + " jest podzielna przez 2 - to nie liczba pierwsza");
         } else if (czyWiecejNiz1Dzielnik(liczba) == true) {
             System.out.println(liczba + " to liczba pierwsza, jak najbardziej");
@@ -29,7 +29,7 @@ public class ZadanieDomowe1 {
 
     }
 
-    public static int modulo(int a) {
+    public static int czyPodzielnaPrzez2(int a) {
         return a % 2;
     }
 
