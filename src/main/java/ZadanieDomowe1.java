@@ -15,41 +15,44 @@ public class ZadanieDomowe1 {
         Scanner in = new Scanner(System.in);
         System.out.println("podaj liczbe: ");
         liczba = in.nextInt();
-        if(liczba <= 1){
-            System.out.println("to nie liczba pierwsza");
-        } else if(liczba == 2) {
-            System.out.println(liczba + " to liczba pierwsza");
-        } else if(modulo(liczba) == 0){
-            System.out.println(liczba + " to nie liczba pierwsza");
-        } else if(jakasMetodaCoSprawdzaCzyLiczbaMaWiecejNizDwaDzielniki(liczba) > 99999){
-            System.out.println(liczba + " to nie liczba pierwsza");
-        } else{
-            System.out.println(liczba + " liczba pierwsza jak najbardziej");
+        if (liczba <= 1) {
+            System.out.println("1 to nie liczba pierwsza");
+        } else if (liczba == 2) {
+            System.out.println("2 to liczba pierwsza");
+        } else if (modulo(liczba) == 0) {
+            System.out.println(liczba + " jest podzielna przez 2 - to nie liczba pierwsza");
+        } else if (czyWiecejNiz1Dzielnik(liczba) == true) {
+            System.out.println(liczba + " to liczba pierwsza, jak najbardziej");
+        } else {
+            System.out.println(liczba + " to nie liczba pierwsza--ostatni warunek");
         }
-        //System.out.println(lPierwsza(liczba));
+
     }
 
-    public static int modulo(int a){
+    public static int modulo(int a) {
         return a % 2;
     }
-    public static int jakasMetodaCoSprawdzaCzyLiczbaMaWiecejNizDwaDzielniki(int b){
-        for(int i = b; i>=3; i--){
-            if((b / i)%2 != 0);
+
+    public static boolean czyWiecejNiz1Dzielnik(int b) {
+
+        int k = 0;
+        boolean wynik = false;
+
+        for (int i = b; i > 2; i--) {
+            if (b % i == 0) {
+                k++;
+                if (k > 1) {
+                    wynik = false;
+                    break;
+                }
+            }
         }
-        return b;
+
+        if (k == 1) {
+            wynik = true;
+        }
+
+        return wynik;
     }
 
 }
-/*for (int i = 0; i <= 100; i++) {
-        if (i % 2 == 0) {
-        lista.add(i * 2);
-        } else {
-        lista.add(i);
-        }
-
-        String imie;
-        Scanner in = new Scanner(System.in);
-        System.out.println("podaj imie: ");
-        imie = in.nextLine();
-
-*/
